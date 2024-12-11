@@ -1,0 +1,189 @@
+1.Create a parent class called "Vehicle" with attributes such as brand,model, year, and a method called "drive". Create a child class called "Car" that inherits from Vehicle and has an additional attribute called "color" and a method called "honk". Create an object of the Car class and call both the "drive" and "honk" methods
+
+class Vehicle {
+    String brand;
+    String model;
+    int year;
+
+    public Vehicle(String brand, String model, int year) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+    }
+
+    public void drive() {
+        System.out.println("The vehicle is driving.");
+    }
+}
+
+class Car extends Vehicle {
+    String color;
+
+    public Car(String brand, String model, int year, String color) {
+        super(brand, model, year);
+        this.color = color;
+    }
+
+    public void honk() {
+        System.out.println("Honk! Honk!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car("Toyota", "Camry", 2023, "Red");
+        myCar.drive();
+        myCar.honk();
+    }
+}
+sample output:
+The vehicle is driving.
+Honk! Honk!
+
+=== Code Execution Successful ===
+
+
+2.Create a parent class called "Person" with attributes such as name, age, and a method called "speak". Create a child class called "Student" that inherits from Person and has an additional attribute called "grade" and a method called "study". Create an object of the Student class and call both the "speak" and "study" methods.
+
+class Person{
+    String name;
+    int age;
+    public Person(String name, int age){
+        this.name = name;
+        this.age = age;
+    }
+    public void speek() {
+        System.out.println("Person speek");
+    }
+}
+class Student extends Person {
+    String grade;
+    public Student(String name, int age, String grade) {
+        super(name,age);
+        this.grade = grade;
+    }
+    public void Study(){
+        System.out.println("Person study");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Student s = new Student("praveen",23,"B");
+        s.speek();
+        s.Study();
+    }
+}
+
+sample output:
+Person speek
+Person study
+
+=== Code Execution Successful ===
+
+
+3. Create a class Person with fields name and age and a parameterized constructor to initialize them. Then, create a subclass Employee that inherits from Person and has an additional field employeeId. Write constructors for the Employee class that initialize its fields and invoke the constructor of the Person class.
+class Person {
+    String name;
+    int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+class Employee extends Person {
+    int employeeId;
+
+    public Employee(String name, int age, int employeeId) {
+        super(name, age); 
+        this.employeeId = employeeId;
+    }
+    public Employee(int employeeId) {
+        super("Unknown", 0);
+        this.employeeId = employeeId;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Employee employee1 = new Employee("Alice", 25, 1234);
+        Employee employee2 = new Employee(5678);
+
+        System.out.println("Employee 1: " + employee1.name + ", " + employee1.age + ", " + employee1.employeeId);
+        System.out.println("Employee 2: " + employee2.name + ", " + employee2.age + ", " + employee2.employeeId);
+    }
+}
+
+sample output:
+Employee 1: Alice, 25, 1234
+Employee 2: Unknown, 0, 5678
+
+=== Code Execution Successful ===
+
+4. Create a base class Animal with a parameterized constructor that sets the name and species fields. Then, create a subclass Dog that inherits from Animal and adds an additional field breed. Write constructors for both classes.
+class Animal{
+    String name;
+    String species;
+    public Animal(String name, String species){
+        this.name = name;
+        this.species = species;
+    }
+}
+class Dog extends Animal{
+    String breed;
+   public Dog(String name, String species, String breed) {
+        super(name,species);
+        this.breed = breed;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Dog myDog = new Dog("snoopi","cmrd","kto");
+        System.out.println("name:"+myDog.name);
+        System.out.println("species:"+myDog.species);
+        System.out.println("breed:"+myDog.breed);
+    }
+}
+
+sample output:
+name:snoopi
+species:cmrd
+breed:kto
+
+=== Code Execution Successful ===
+
+5.Create an interface called "BankAccount" with methods called "deposit" and "withdraw". Create a class called "CheckingAccount" that implements the BankAccount interface and implements the "deposit" and "withdraw" methods. Create an object of the CheckingAccount class and call both the "deposit" and "withdraw" methods.
+
+
+interface BankAccount {
+    void deposit(double amount);
+    void withdraw(double amount);
+}
+
+class CheckingAccount implements BankAccount {
+    private double balance;
+
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited: $" + amount);
+    }
+
+    public void withdraw(double amount) {
+        if (balance >= amount) {
+            balance -= amount;
+            System.out.println("Withdrew: $" + amount);
+        } else {
+            System.out.println("Insufficient funds.");
+        }
+    }
+
+    public static void main(String[] args) {
+        CheckingAccount account = new CheckingAccount();
+        account.deposit(1000.0);
+        account.withdraw(500.0);
+        account.withdraw(1000.0);
+    
+    
+    }
+}
