@@ -1,0 +1,147 @@
+
+
+1. Create a Book class to store Books information
+
+(bookid, title, author name, price).Create an object and assign values to Book variables and print them using a method
+
+public class Book {
+  int bookId;
+  String tittle;
+  String authorName;
+  double price;
+  public Book(int bookId, String tittle, String authorName, double price) {
+    this.bookId = bookId;
+    this.tittle = tittle;
+    this.authorName= authorName;
+    this.price = price;
+  }
+  public void printBookDetails() {
+    System.out.println("bookId : "+ bookId);
+    System.out.println("tittle : "+ tittle);
+    System.out.println("authorName : "+ authorName);
+    System.out.println("price : " + price);
+  }
+  public static void main(String[] args) {
+    Book book1 = new Book(123,"lion","abcd",20.5);
+    book1.printBookDetails();
+  }
+}
+
+Output:
+
+bookId : 123
+tittle : lion
+authorName : abcd
+price : 20.5
+
+
+2.Write a class with the name Perimeter using function overload that computes the perimeter of a square, a rectangle and a circle.
+
+Formula:
+
+Perimeter of a square = 4 * s
+
+Perimeter of a rectangle = 2 * (l + b)
+
+  Perimeter of a circle = 2 * (22/7) * r
+
+class Perimeter {
+    public int perimeter(int side) {
+        return 4 * side;
+    }
+
+    public int perimeter(int length, int breadth) {
+        return 2 * (length + breadth);
+    }
+
+    public double perimeter(double radius) {
+        return 2 * Math.PI * radius;
+    }
+
+    public static void main(String[] args) {
+        Perimeter perimeter = new Perimeter();
+
+        int squarePerimeter = perimeter.perimeter(5);
+        System.out.println("Perimeter of square: " + squarePerimeter);
+
+        int rectanglePerimeter = perimeter.perimeter(4, 6);
+        System.out.println("Perimeter of rectangle: " + rectanglePerimeter);
+
+        double circlePerimeter = perimeter.perimeter(7.0);
+        System.out.println("Perimeter of circle: " + circlePerimeter);
+    }
+}
+
+Output:
+
+Perimeter of square: 20
+Perimeter of rectangle: 20
+Perimeter of circle: 43.982297150257104
+
+3.Write a Program to print Fibonacci series by taking range of 
+
+   series from the user.
+
+import java.util.Scanner;
+
+public class FabonacciSeries {
+  public static void main(String[] args) {
+    Scanner s = new Scanner(System.in);
+    System.out.println("Enter a range");
+    int range = s.nextInt();
+    int firstTerm=0, secondTerm=1;
+    System.out.println("Fabonacci series up to"+range+"term");
+    
+    for(int i=1; i<=range; i++){
+      System.out.println("firstTerm"+" ");
+      
+      int nextTerm = firstTerm + secondTerm;
+      firstTerm = secondTerm;
+      secondTerm = nextTerm;
+    }
+  }
+}
+
+Output:
+
+Enter a range
+
+
+4..Write a program using inheritance. where Car is the Super class,
+
+   Mahindra is derived class. define methods in two classes and 
+
+   using Mahindra object call car class method.
+
+class Car {
+    public void start() {
+        System.out.println("Car started");
+    }
+
+    public void stop() {
+        System.out.println("Car stopped");
+    }
+}
+
+class Mahindra extends Car {
+    public void honk() {
+        System.out.println("Honk honk");
+    }
+}
+
+public class InheritanceExample {
+    public static void main(String[] args) {
+        Mahindra mahindraCar = new Mahindra();
+
+        mahindraCar.start();
+        mahindraCar.stop();
+        mahindraCar.honk();
+    }
+}
+
+output:
+Car started
+Car stopped
+Honk honk
+
+=== Code Execution Successful ===
