@@ -1,0 +1,172 @@
+
+
+1.Creating  a superclass Animal and three subclasses, Herbivores, Carnivores, and Omnivores. Subclasses extend the superclass and override its eat() method. We will call the eat() method by the reference variable of Parent class, i.e. Animal class. As it refers to the base class object and the base class method overrides the superclass method; the base class method is invoked at runtime.
+
+class Animal{
+    void eat(){
+        System.out.println("animal eat food");
+    }
+}
+class  Herbivores extends Animal {
+    void eat(){
+        System.out.println(" Herbivores eat plants");
+    }
+}
+class  Carnivores extends Animal{
+    void eat() {
+        System.out.println(" Carnivores eat meet");
+    }
+}
+class  Omnivores extends Animal {
+    void eat() {
+        System.out.println(" Omnivores eat plant and meet");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Animal animal = new Herbivores();
+        animal.eat();
+        Animal animal2 = new Carnivores();
+        animal.eat();
+        Animal animal3 = new Omnivores();
+        animal.eat();
+    }
+}
+
+output:
+
+Herbivores eat plants
+ Herbivores eat plants
+ Herbivores eat plants
+
+=== Code Execution Successful ===
+
+
+
+2.Creating one superclass Hill stations and three subclasses Manali, Mussoorie, Gulmarg. Subclasses extend the superclass and override its location() and famousfor() method. We will call the location() and famousfor() method by the Parent class’, i.e. Hillstations class. As it refers to the base class object and the base class method overrides the superclass method; the base class method is invoked at runtime. 
+
+class HillStations {
+    void location() {
+        System.out.println("Hill stations in india");
+    }
+    void famousfor(){
+        System.out.println("beutiful scenery");
+    }
+}
+class Manali extends HillStations {
+    void location() {
+        System.out.println("Manali in Himachal pradesh");
+    }
+    void famousfor() {
+        System.out.println("adventure sports and temple");
+    }
+}
+class Mussoorie extends HillStations {
+    void location() {
+        System.out.println("Mussoorie in uttarkand");
+    }
+    void famousfor(){
+        System.out.println("Scenic Beauty and Colonial Era Buildings");
+    }
+}
+class  Gulmarg extends HillStations {
+    void location() {
+        System.out.println(" Gulmarg in jammu kashmir");
+    }
+    void famousfor() {
+        System.out.println("Skiing and Snowboarding");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        HillStations hillstation = new Manali();
+        hillstation.location();
+        hillstation.famousfor();
+        
+        HillStations hillistation2 = new  Mussoorie();
+        hillistation2.location();
+        hillistation2.famousfor();
+        
+         HillStations hillistation3 = new Gulmarg();
+         hillistation3.location();
+         hillistation3.famousfor();
+    }
+}
+
+output:
+
+Manali in Himachal pradesh
+adventure sports and temple
+Mussoorie in uttarkand
+Scenic Beauty and Colonial Era Buildings
+ Gulmarg in jammu kashmir
+Skiing and Snowboarding
+
+=== Code Execution Successful ===
+
+
+3) Create a class called student, inside the student class, implement the following instance variable 
+(fields)
+*String name
+*int age
+*String department
+implement the following constructors in the student class , A default constructor that initialaize the name to
+"Unkown", age to 20, deparment to "Unassigned".
+*A constructor that takes two parameters name and age and initialize the depsrment "IT",
+*A constructor that takes three parameters name ,age and department.
+in the main class create instance of the student class using each.
+
+
+class Student {
+  String name;
+  int age;
+  String department;
+  
+  public Student() {
+    name = "Unknown";
+    age = 20;
+    department = "Unassigned";
+  }
+  public Student(String name, int age){
+    this.name = name;
+    this.age = age;
+    department = "IT";
+  }
+  public Student(String name, int age, String department){
+    this.name = name;
+    this.age= age;
+    this.department = department;
+  }
+  public void displayInfo() {
+    System.out.println("Name:" +name);
+    System.out.println("Age :"+age);
+    System.out.println("Department"+department);
+  }
+}
+public class Main{
+  public static void main(String[] args){
+    Student s1 = new Student();
+    Student s2 = new Student("praveen",22);
+    Student s3 = new Student("pranay",23);
+    
+    s1.displayInfo();
+   
+    s2.displayInfo();
+    
+    s3.displayInfo();
+    
+  }
+}
+
+Output:
+
+Name:Unknown
+Age :20
+DepartmentUnassigned
+Name:praveen
+Age :22
+DepartmentIT
+Name:pranay
+Age :23
+DepartmentIT
