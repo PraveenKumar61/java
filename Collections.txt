@@ -1,0 +1,198 @@
+1.Write a program to traverse(or iterate) HashSet?
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class TraversHashSet {
+
+	public static void main(String[] args) {
+		HashSet<String> hash = new HashSet<>();
+		//Elements to the HashSet
+		hash.add("apple");
+		hash.add("banana");
+		hash.add("grapes");
+		hash.add("dragen");
+		
+		//traverse using enhanced for the loop
+		for(String fruit : hash) {
+			System.out.println(fruit);
+		}
+
+	}
+
+}
+
+output:
+
+banana
+apple
+dragen
+grapes
+
+
+2. Write a Java program to sort a given array list.
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class SortArrayList {
+
+	public static void main(String[] args) {
+		//create an arrayList an integer
+		List<Integer> numbers = new ArrayList<>();
+		numbers.add(7);
+		numbers.add(3);
+		numbers.add(9);
+		numbers.add(-33);
+		
+		//print unsorted list
+		System.out.println("unsorted list:"+numbers);
+		
+		//sorted array ascending order
+		Collections.sort(numbers);
+		
+		//print the array list
+		System.out.println("sorted array list:"+numbers);
+
+	}
+
+}
+
+output:
+
+unsorted list:[7, 3, 9, -33]
+sorted array list:[-33, 3, 7, 9]
+
+3. Write a Java program to replace the second element of an ArrayList with the specified element
+
+import java.util.ArrayList;
+import java.util.List;
+public class ReplaceSecondElement {
+
+	public static void main(String[] args) {
+		//create arrayList
+		List<String> colors = new ArrayList<>();
+		colors.add("blue");
+		colors.add("red");
+		colors.add("green");
+		colors.add("yellow");
+		
+		//print the orginal array list
+		System.out.println("original arrayList:"+colors);
+		
+		//replace second element
+		colors.set(1, "white");
+		
+		//print the modify array list
+		System.out.println("modify arrayList:"+colors);
+
+	}
+
+}
+
+output:
+
+original arrayList:[blue, red, green, yellow]
+modify arrayList:[blue, white, green, yellow]
+
+4. Write a Java program to iterate a linked list in reverse order.
+
+import java.util.LinkedList;
+
+public class ReverseLinkedListIteration {
+
+    public static void main(String[] args) {
+        // Create a LinkedList
+        LinkedList<String> linkedList = new LinkedList<>();
+        linkedList.add("A");
+        linkedList.add("B");
+        linkedList.add("C");
+        linkedList.add("D");
+
+        // Iterate backwards using descendingIterator()
+        System.out.println("LinkedList in reverse order:");
+        for (String element : linkedList.descendingIterator()) {
+            System.out.print(element + " ");
+        }
+    }
+}
+
+output:
+
+LinkedList in reverse order:
+D C B A 
+
+
+5.Write a Java program to remove all elements from a hash set.
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+public class RemoveAllElementsFromHash {
+  public static void main(String[] args){
+    //create hash Set
+    Set<String> myHashSet = new HashSet<>();
+    myHashSet.add("apple");
+    myHashSet.add("mango");
+    myHashSet.add("banana");
+    myHashSet.add("dragen");
+    
+    System.out.println("HashSet:"+myHashSet);
+    
+  // method1 use clear()
+  myHashSet.clear();
+  
+  System.out.println("hash set after clear:"+myHashSet);
+  
+  //method2
+   Iterator<String> iterator = myHashSet.iterator();
+   while(iterator.hasNext()){
+     iterator.next();
+     iterator.remove();
+    
+   }
+   System.out.println("HashSet after removing using Iterator: " + myHashSet);
+    
+  }
+}
+
+Output:
+
+HashSet:[banana, apple, dragen, mango]
+hash set after clear:[]
+HashSet after removing using Iterator: []
+
+
+6.Write a Java program to convert a hash set to an array.
+
+import java.util.HashSet;
+import java.util.Set;
+public class HashSetToArray {
+  public static void main(String[] args){
+    //print HashSet
+    Set<String> myHashSet = new HashSet<>();
+    myHashSet.add("apple");
+    myHashSet.add("banana");
+    myHashSet.add("lemon");
+    myHashSet.add("grape");
+    
+    // convert HashSet to Array
+    String[] array = myHashSet.toArray(new String[0]);
+    
+    //print the array elements
+    System.out.println("array element:");
+    for(String element : myHashSet){
+      System.out.println(element+" ");
+    }
+  }
+}
+
+Output:
+
+array element:
+banana 
+apple 
+lemon 
+grape 
