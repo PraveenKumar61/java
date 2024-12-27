@@ -1,0 +1,190 @@
+1.How to reverse a String in place in Java?
+
+public class ReverseString {
+
+	public static void main(String[] args) {
+		System.out.println("Enter a string");
+		String str = "ABCD";
+		String rev = " ";
+		
+		int len=str.length();
+		
+		for(int i=len-1;i>=0;i--) {
+			rev=rev+str.charAt(i);
+		}
+		System.out.println("reverse string:"+rev);
+
+	}
+
+}
+
+output:
+
+Enter a string
+reverse string: DCBA
+
+
+2.How do you count a number of vowels and consonants in a given string?
+
+public class VowelConsonantCount {
+    public static void main(String[] args) {
+        String str = "Hello, world!";
+        int vowelCount = 0;
+        int consonantCount = 0;
+
+        for (char c : str.toLowerCase().toCharArray()) {
+            if ("aeiou".indexOf(c) !=-1) {
+                vowelCount++;
+            } else if (Character.isLetter(c)) {
+                consonantCount++;
+            }
+        }
+
+        System.out.println("Vowels: " + vowelCount);
+        System.out.println("Consonants: " + consonantCount);
+    }
+}
+
+output:
+
+Vowels: 3
+Consonants: 7
+
+3.How to Convert String to Integer to String in Java with Example
+
+public class StringToIntToString {
+
+	public static void main(String[] args) {
+		// convert string to integer
+		String str = "123";
+		int num = Integer.parseInt(str);
+		
+		// convert int to string
+		String str2 = Integer.toString(num);
+		
+		System.out.println("original string:"+str);
+		System.out.println("integer value:"+num);
+		System.out.println("String value:"+str2);
+
+	}
+
+}
+
+output:
+
+original string:123
+integer value:123
+String value:123
+
+
+4.Write a Java Program to remove all white spaces from a String?
+
+public class StringWhiteSpace {
+
+	public static void main(String[] args) {
+		String str = "this is string with spaces";
+		
+		// use replaceAll() method 
+		String strWithoutSpaces = str.replaceAll("\\s+", "");
+		
+		System.out.println("string without spaces : "+strWithoutSpaces);
+	}
+
+}
+
+output:
+
+string without spaces : thisisstringwithspaces
+
+5.Write a Java Program to count the number of words in a String without using the Predefined method?
+
+public class CountWords {
+	public static int CountWords(String str) {
+		int count = 0; //variable stores number of words ,initialise 0
+		boolean word = false; // it indicates we are currently in the word or not,initialy false
+		
+		for(int i = 0; i<=str.length();i++) {
+			char c = str.charAt(i);
+			if(Character.isLetterOrDigit(c)) {
+				if(!word) {
+					word= true;
+					count++;
+				} else {
+					word =false;
+				}
+			}
+			return count;
+			}
+		return count;
+
+	}
+	public static void main(String[] args) {
+		String sentence = "this is a sample sentence";
+		int wordCount = CountWords(sentence);
+		System.out.println("number of count"+wordCount);
+	}
+
+}
+
+output:
+
+number of count1
+
+6.WAP to find accurrence of given in the given string.
+
+public class CountCharacterAccurance {
+
+	public static void main(String[] args) {
+		String str = "java programing java oops";
+		int totalCount = str.length();
+		int totalCount_afterRemove = str.replaceAll("a", "").length();
+		int count = totalCount - totalCount_afterRemove;
+		
+		System.out.println("number of occurance of a : "+count);
+
+	}
+
+}
+
+output:
+
+number of occurance of a : 5
+
+7.Write a Program using String functions
+
+public class StringFunctionsDemo {
+
+	public static void main(String[] args) {
+		String str = "Hello Word";
+		
+		//length of the string
+		int length = str.length();
+		System.out.println("Length:"+length);
+		
+		//uppercase of the string
+		String upperCase = str.toUpperCase();
+		System.out.println("Uppercase:"+upperCase);
+		
+		//lowercase of the string
+		String lowerCase = str.toLowerCase();
+		System.out.println("Lowercase:"+lowerCase);
+		
+		//reverse the string using stringBuilder(str)
+		String reverse = new StringBuilder(str).reverse().toString();
+		System.out.println("Reverse:"+reverse);
+		
+		//replace of the string
+		String replace = str.replace("o", "a");
+		System.out.println("Replace:"+replace);
+		
+		}
+
+}
+
+output:
+
+Length:10
+Uppercase:HELLO WORD
+Lowercase:hello word
+Reverse:droW olleH
+Replace:Hella Ward
